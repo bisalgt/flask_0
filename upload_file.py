@@ -7,7 +7,14 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        print(request.form)
-        return 'hello'
+        print(request.cookies)
+        print(request.files)
+        return request.form
     else:
         return render_template('home.html')
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return error
+    
