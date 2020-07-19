@@ -1,0 +1,25 @@
+<h1> This is base html </h1>
+
+<br><br>
+
+{% macro show_elm(a)%}
+	<h3>{{ a }}</h3>
+{% endmacro %}
+
+
+{{show_elm(digits)}}
+
+<br><br>
+
+{% import 'macros.html' as macros %}
+
+{{ macros.show_ind(digits) }}
+
+{% block body %}
+	{% block content %}
+		<h1> block content </h1>
+
+	{% endblock content %}
+	<h2> block body </h1>
+{% endblock body %}
+
