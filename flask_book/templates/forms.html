@@ -1,0 +1,14 @@
+<h1> FORM </h1>
+<h2> Messages </h2>
+<div>
+	{% for message in get_flashed_messages() %}
+		{{ message }}
+	{% endfor %}
+
+<br><br>
+
+<form method='POST'>
+	{{ form.hidden_tag() }}
+	{{ form.name.label }}{{ form.name() }}
+	{{ form.submit() }}
+</form>
