@@ -1,0 +1,20 @@
+<h1> Template rendering with autoescaping learn </h1>
+
+
+
+{{ value }}
+
+
+
+
+<br><br>
+
+
+{% autoescape false %}
+	{{ value }}
+{% endautoescape %}
+
+<br> 
+<h1> Autoescaping off using safe filter </h1>
+
+{{ value | safe }}
