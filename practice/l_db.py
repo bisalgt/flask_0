@@ -22,3 +22,11 @@ def index():
     mysql.connection.commit()
     cur.close()
     return 'success'
+
+
+@app.route('/users')
+def list_user():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM my_user')
+    users = cur.fetchall()
+    return str(users)
